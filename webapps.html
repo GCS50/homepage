@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="The web applications I built in CS50x weeks 8 and 9: Trivia, Homepage, Birthdays and Finance.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Web Apps | CS50x Portfolio</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span class="brand-mark">CS50x</span> Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="curriculum.html">Curriculum</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="webapps.html">Web Apps</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="havoc.html">Final Project</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <p class="eyebrow">Weeks 8 &ndash; 9</p>
+            <h1>Web Apps</h1>
+            <p class="lead">From static pages in the browser to dynamic applications with a Python server and a
+                database.</p>
+            <a class="btn btn-outline-light btn-sm" href="https://github.com/GCS50/Codespace">All source code</a>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <article class="panel h-100 app">
+                    <p class="week-label">Week 8 &middot; Front end</p>
+                    <h2>Trivia</h2>
+                    <p>A quiz page with multiple-choice and free-response questions. Answers turn green or red
+                        instantly, handled entirely in the browser.</p>
+                    <p class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                            class="tag">JavaScript</span><span class="tag">DOM events</span></p>
+                    <div class="app-links">
+                        <a class="btn btn-outline-light btn-sm"
+                            href="https://github.com/GCS50/Codespace/tree/main/trivia">Source code</a>
+                        <a class="btn btn-outline-light btn-sm"
+                            href="https://cs50.harvard.edu/x/psets/8/trivia/">Assignment</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <article class="panel h-100 app">
+                    <p class="week-label">Week 8 &middot; Front end</p>
+                    <h2>Homepage</h2>
+                    <p>This website: four linked pages with a responsive Bootstrap layout, a custom stylesheet and
+                        interactive JavaScript.</p>
+                    <p class="tags"><span class="tag">Bootstrap</span><span class="tag">Responsive design</span><span
+                            class="tag">JavaScript</span></p>
+                    <div class="app-links">
+                        <a class="btn btn-accent btn-sm" href="index.html">You are here</a>
+                        <a class="btn btn-outline-light btn-sm"
+                            href="https://cs50.harvard.edu/x/psets/8/homepage/">Assignment</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <article class="panel h-100 app">
+                    <p class="week-label">Week 9 &middot; Flask</p>
+                    <h2>Birthdays</h2>
+                    <p>A Flask app to keep track of friends' birthdays. Names and dates are added through a form, stored
+                        in SQLite and rendered back as a table.</p>
+                    <p class="tags"><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">GET /
+                            POST</span><span class="tag">Jinja</span></p>
+                    <div class="app-links">
+                        <a class="btn btn-outline-light btn-sm"
+                            href="https://github.com/GCS50/Codespace/tree/main/birthdays">Source code</a>
+                        <a class="btn btn-outline-light btn-sm"
+                            href="https://cs50.harvard.edu/x/psets/9/birthdays/">Assignment</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <article class="panel h-100 app">
+                    <p class="week-label">Week 9 &middot; Flask</p>
+                    <h2>Finance</h2>
+                    <p>C$50 Finance, a stock trading simulator: register, log in, check real stock prices,
+                        &ldquo;buy&rdquo; and &ldquo;sell&rdquo; shares with virtual cash, and review a full transaction
+                        history.</p>
+                    <p class="tags"><span class="tag">Flask</span><span class="tag">Sessions</span><span
+                            class="tag">Password hashing</span><span class="tag">SQL</span></p>
+                    <div class="app-links">
+                        <a class="btn btn-accent btn-sm" href="https://finance.cs50.net/">Live demo</a>
+                        <a class="btn btn-outline-light btn-sm"
+                            href="https://github.com/GCS50/Codespace/tree/main/finance">Source code</a>
+                        <a class="btn btn-outline-light btn-sm"
+                            href="https://cs50.harvard.edu/x/psets/9/finance/">Assignment</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <section class="section">
+            <p class="eyebrow">Under the hood</p>
+            <h2>How a Flask request works</h2>
+            <ol class="flow">
+                <li><span class="step">01</span> The browser sends a request, e.g. <code>GET /quote</code>.</li>
+                <li><span class="step">02</span> Flask matches the URL to a route in <code>app.py</code>.</li>
+                <li><span class="step">03</span> Python runs the logic and queries the SQL database.</li>
+                <li><span class="step">04</span> Jinja fills an HTML template with the results.</li>
+                <li><span class="step">05</span> The finished page is sent back to the browser.</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <p class="eyebrow">Comparison</p>
+            <h2>Static site vs. Flask app</h2>
+            <div class="table-responsive">
+                <table class="table table-dark table-borderless align-middle compare">
+                    <thead>
+                        <tr>
+                            <th scope="col">&nbsp;</th>
+                            <th scope="col">Static (Week 8)</th>
+                            <th scope="col">Flask (Week 9)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Pages</th>
+                            <td>Fixed HTML files</td>
+                            <td>Generated per request</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Logic</th>
+                            <td>JavaScript in the browser</td>
+                            <td>Python on the server</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Data</th>
+                            <td>None stored</td>
+                            <td>SQLite database</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Users</th>
+                            <td>Everyone sees the same page</td>
+                            <td>Log in with personal sessions</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Built for CS50x &middot; <a href="https://cs50.harvard.edu/x/">cs50.harvard.edu/x</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

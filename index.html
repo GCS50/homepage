@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="An overview of Harvard's CS50x: what the course covers, what I built, and the skills I gained.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>CS50x Portfolio</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Count each statistic up from 0 to its target value
+            let stats = document.querySelectorAll('.stat-number');
+            for (let stat of stats) {
+                let target = Number(stat.dataset.target);
+                let suffix = stat.dataset.suffix || '';
+                let current = 0;
+
+                let timer = setInterval(function () {
+                    current++;
+                    stat.innerHTML = current + suffix;
+                    if (current >= target) {
+                        clearInterval(timer);
+                    }
+                }, 1000 / target);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span class="brand-mark">CS50x</span> Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="curriculum.html">Curriculum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="webapps.html">Web Apps</a></li>
+                    <li class="nav-item"><a class="nav-link" href="havoc.html">Final Project</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <p class="eyebrow">Harvard University &middot; CS50x</p>
+            <h1>Introduction to <span class="accent">Computer Science</span></h1>
+            <p class="lead">
+                A structured overview of CS50x: what the course covers week by week,
+                the projects I built, and the skills I gained along the way.
+            </p>
+            <div class="hero-buttons">
+                <a class="btn btn-accent btn-lg" href="curriculum.html">Explore the curriculum</a>
+                <a class="btn btn-outline-light btn-lg" href="havoc.html">Final project: Havoc</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="container stats">
+            <h2 class="visually-hidden">Course in numbers</h2>
+            <div class="row g-3 text-center">
+                <div class="col-6 col-lg-3">
+                    <div class="panel">
+                        <p class="stat-number" data-target="12">12</p>
+                        <p class="stat-label">Lectures</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="panel">
+                        <p class="stat-number" data-target="10">10</p>
+                        <p class="stat-label">Problem sets</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="panel">
+                        <p class="stat-number" data-target="27">27</p>
+                        <p class="stat-label">Programs built</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="panel">
+                        <p class="stat-number" data-target="1">1</p>
+                        <p class="stat-label">Final project</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section">
+            <p class="eyebrow">What I learned</p>
+            <h2>Skills gained</h2>
+            <div class="row g-4 mt-1">
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">C</div>
+                        <h3>Programming in C</h3>
+                        <p>Low-level programming close to the hardware: types, loops, functions, and compiling source
+                            code into machine code.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">0x</div>
+                        <h3>Memory management</h3>
+                        <p>Pointers, dynamic allocation with <code>malloc</code> and <code>free</code>, file I/O, and
+                            finding leaks with Valgrind.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">O(n)</div>
+                        <h3>Algorithms &amp; data structures</h3>
+                        <p>Searching, sorting, recursion, Big O analysis, linked lists, hash tables and tries.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">Py</div>
+                        <h3>Python</h3>
+                        <p>Writing concise, high-level programs with lists, dictionaries, libraries and CSV processing.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">SQL</div>
+                        <h3>Databases</h3>
+                        <p>Designing relational tables, querying them with <code>SELECT</code>, <code>JOIN</code> and
+                            subqueries, and guarding against SQL injection.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">&lt;/&gt;</div>
+                        <h3>Web development</h3>
+                        <p>HTML, CSS, JavaScript and Bootstrap on the front end; Flask, Jinja and sessions on the back
+                            end.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section">
+            <p class="eyebrow">Structure</p>
+            <h2>How the course works</h2>
+            <div class="row g-4 mt-1">
+                <div class="col-md-4">
+                    <div class="panel h-100">
+                        <p class="step">01</p>
+                        <h3>Lectures</h3>
+                        <p>Each week introduces a new topic, from binary and Scratch to C, Python, SQL, artificial
+                            intelligence and the web.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel h-100">
+                        <p class="step">02</p>
+                        <h3>Problem sets</h3>
+                        <p>Hands-on programming assignments that apply each week's concepts to real problems.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel h-100">
+                        <p class="step">03</p>
+                        <h3>Final project</h3>
+                        <p>Havoc: an API-first platform for versioned, structured data that brings everything together.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section">
+            <div class="panel cta">
+                <h2>See the work</h2>
+                <p>Every week explained, every web app linked, and the final project in detail.</p>
+                <a class="btn btn-accent" href="curriculum.html">Curriculum</a>
+                <a class="btn btn-outline-light" href="webapps.html">Web Apps</a>
+                <a class="btn btn-outline-light" href="havoc.html">Havoc</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Built for CS50x &middot; <a href="https://cs50.harvard.edu/x/">cs50.harvard.edu/x</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

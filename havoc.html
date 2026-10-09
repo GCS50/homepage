@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Havoc, my CS50x final project: an open, API-first platform for storing, versioning and serving structured data.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Havoc | CS50x Portfolio</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span class="brand-mark">CS50x</span> Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="curriculum.html">Curriculum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="webapps.html">Web Apps</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="havoc.html">Final
+                            Project</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero havoc-hero">
+        <div class="container">
+            <p class="eyebrow">CS50x Final Project</p>
+            <h1 class="havoc-title">HAVOC</h1>
+            <p class="lead">Open, API-first platform for storing, versioning and serving structured data.</p>
+            <p class="tags justify-content-center">
+                <span class="tag">api-first</span><span class="tag">fastapi</span><span
+                    class="tag">postgresql</span><span class="tag">versioning</span><span
+                    class="tag">json-schema</span><span class="tag">headless</span><span
+                    class="tag">self-hosted</span><span class="tag">raspberry-pi</span>
+            </p>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <section class="panel h-100">
+                    <h2>About the project</h2>
+                    <p>
+                        Havoc is an open, API-first platform for storing, versioning and serving structured data.
+                        Instead of fixed data models, entity types are defined with JSON Schema, and Havoc manages
+                        content with a complete version history, a review workflow and role-based permissions.
+                        Everything is available through a versioned REST API.
+                    </p>
+                    <p>
+                        Havoc separates data from applications: websites, apps and internal tools can all share one
+                        reliable data layer without being tied to a particular front end.
+                    </p>
+                </section>
+            </div>
+            <div class="col-lg-5">
+                <section class="panel h-100">
+                    <h2>At a glance</h2>
+                    <dl class="facts">
+                        <dt>Course</dt>
+                        <dd>CS50x, Harvard University</dd>
+                        <dt>Type</dt>
+                        <dd>Headless, self-hosted data platform</dd>
+                        <dt>Interface</dt>
+                        <dd>Versioned REST / JSON API</dd>
+                        <dt>Runs on</dt>
+                        <dd>Docker, including ARM64 (e.g. Raspberry Pi 5)</dd>
+                    </dl>
+                </section>
+            </div>
+        </div>
+
+        <section class="section">
+            <p class="eyebrow">Features</p>
+            <h2>What Havoc does</h2>
+            <div class="row g-4 mt-1">
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">{ }</div>
+                        <h3>Schema-defined entities</h3>
+                        <p>Define your own entity types with JSON Schema instead of fixed models. Every entry is
+                            validated against its schema.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">v2</div>
+                        <h3>Immutable history</h3>
+                        <p>Every change creates a new version. Earlier versions are never overwritten, so the full
+                            history of each entry stays traceable.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">&#10003;</div>
+                        <h3>Review workflow</h3>
+                        <p>Changes can be reviewed before they are published, keeping the shared data reliable.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">RBAC</div>
+                        <h3>Role-based access</h3>
+                        <p>JWT authentication for users, API keys for service clients, and passwords hashed with bcrypt.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">/api</div>
+                        <h3>Versioned REST API</h3>
+                        <p>All data is served as JSON through a versioned API, with interactive OpenAPI documentation at
+                            <code>/docs</code>.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="panel h-100">
+                        <div class="skill-icon">&#8981;</div>
+                        <h3>Full-text search</h3>
+                        <p>Flexible attributes are stored as PostgreSQL JSONB, with built-in full-text search across
+                            content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <p class="eyebrow">Tech stack</p>
+            <h2>Built with</h2>
+            <div class="table-responsive">
+                <table class="table table-dark table-borderless align-middle compare">
+                    <thead>
+                        <tr>
+                            <th scope="col">Layer</th>
+                            <th scope="col">Technology</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Backend</th>
+                            <td>Python 3.12, FastAPI</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Database</th>
+                            <td>PostgreSQL 16 (JSONB, full-text search)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ORM &amp; migrations</th>
+                            <td>SQLAlchemy 2.x (async), Alembic</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Validation</th>
+                            <td>Pydantic v2, JSON Schema</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Authentication</th>
+                            <td>JWT, API keys, bcrypt</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Deployment</th>
+                            <td>Docker, Docker Compose (ARM64-ready)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Testing</th>
+                            <td>pytest</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <p class="eyebrow">From course to project</p>
+            <h2>How CS50 led here</h2>
+            <div class="accordion" id="origins">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#origin1" aria-expanded="true" aria-controls="origin1">
+                            <span class="step">Week 6</span> Python
+                        </button>
+                    </h3>
+                    <div id="origin1" class="accordion-collapse collapse show" data-bs-parent="#origins">
+                        <div class="accordion-body">The whole backend is written in Python, building on the language
+                            introduced in Week 6.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#origin2" aria-expanded="false" aria-controls="origin2">
+                            <span class="step">Week 7</span> SQL
+                        </button>
+                    </h3>
+                    <div id="origin2" class="accordion-collapse collapse" data-bs-parent="#origins">
+                        <div class="accordion-body">Relational design with tables, constraints and indexes, scaled up
+                            from SQLite to PostgreSQL, with SQLAlchemy and Alembic managing the schema.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#origin3" aria-expanded="false" aria-controls="origin3">
+                            <span class="step">Week 9</span> Flask
+                        </button>
+                    </h3>
+                    <div id="origin3" class="accordion-collapse collapse" data-bs-parent="#origins">
+                        <div class="accordion-body">Routes, requests and responses carry over directly from Flask to
+                            FastAPI. The difference is that Havoc returns JSON for other programs instead of HTML pages.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#origin4" aria-expanded="false" aria-controls="origin4">
+                            <span class="step">Weeks 7 &amp; 9</span> Security
+                        </button>
+                    </h3>
+                    <div id="origin4" class="accordion-collapse collapse" data-bs-parent="#origins">
+                        <div class="accordion-body">Guarding against SQL injection (Week 7) and Finance's login system
+                            with hashed passwords and sessions (Week 9), extended to JWT, API keys and role-based
+                            access.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <p class="eyebrow">Deliverables</p>
+            <h2>Links</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="panel h-100">
+                        <h3>Source code</h3>
+                        <p>The full code and README on GitHub.</p>
+                        <a class="btn btn-accent btn-sm" href="https://github.com/GCS50/Havoc">GitHub repository</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel h-100">
+                        <h3>Video demo</h3>
+                        <p>A walkthrough of Havoc in action, in under three minutes.</p>
+                        <a class="btn btn-accent btn-sm" href="https://www.youtube.com/watch?v=HMf0OXfk9pg">Watch
+                            the demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Built for CS50x &middot; <a href="https://cs50.harvard.edu/x/">cs50.harvard.edu/x</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+/* Colors used across the site */
+:root {
+    --accent: #ff4d4f;
+    --accent-dark: #e03537;
+    --bg: #0b0d12;
+    --surface: #141821;
+    --border: #252c3a;
+    --muted: #9aa4b2;
+}
+
+body {
+    background-color: var(--bg);
+    color: #e6e9ef;
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    color: var(--accent);
+}
+
+code {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(11, 13, 18, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.brand-mark {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Page headers */
+.hero {
+    background: radial-gradient(ellipse at top, rgba(255, 77, 79, 0.18), transparent 60%);
+    padding: 6rem 0 4rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    letter-spacing: -0.02em;
+}
+
+.hero .lead {
+    color: var(--muted);
+    margin: 1rem auto 2rem;
+    max-width: 640px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.page-header {
+    background: radial-gradient(ellipse at top left, rgba(255, 77, 79, 0.15), transparent 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 0 2.5rem;
+}
+
+.page-header .lead {
+    color: var(--muted);
+    max-width: 640px;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.eyebrow,
+.week-label,
+.step {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.section {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+/* Cards */
+.panel {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    color: var(--muted);
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+/* Headings and highlights stay bright inside the muted cards */
+.panel h2,
+.panel h3,
+.panel strong,
+.stat-number {
+    color: #fff;
+}
+
+.panel:hover {
+    border-color: rgba(255, 77, 79, 0.5);
+    transform: translateY(-3px);
+}
+
+.panel p:last-child {
+    margin-bottom: 0;
+}
+
+.btn-accent {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--accent);
+    --bs-btn-border-color: var(--accent);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--accent-dark);
+    --bs-btn-hover-border-color: var(--accent-dark);
+    --bs-btn-active-bg: var(--accent-dark);
+    --bs-btn-active-border-color: var(--accent-dark);
+    --bs-btn-disabled-bg: var(--accent);
+    --bs-btn-disabled-border-color: var(--accent);
+}
+
+/* Home page */
+.stats {
+    margin-top: -1rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.skill-icon {
+    align-items: center;
+    background-color: rgba(255, 77, 79, 0.12);
+    border-radius: 0.75rem;
+    color: var(--accent);
+    display: flex;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    height: 3rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    min-width: 3rem;
+    padding: 0 0.5rem;
+    width: fit-content;
+}
+
+.cta {
+    text-align: center;
+}
+
+.cta .btn {
+    margin: 0.25rem;
+}
+
+/* Curriculum timeline */
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+#count {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 1rem 0 2rem;
+}
+
+.timeline {
+    border-left: 2px solid var(--border);
+    margin-left: 0.5rem;
+    padding-left: 1.75rem;
+}
+
+.week {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Dot on the timeline line */
+.week::before {
+    background-color: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--bg);
+    content: "";
+    height: 12px;
+    left: calc(-1.75rem - 7px);
+    position: absolute;
+    top: 1.9rem;
+    width: 12px;
+}
+
+.week h2 {
+    font-size: 1.5rem;
+}
+
+.week li {
+    margin-bottom: 0.35rem;
+}
+
+.final {
+    border-color: rgba(255, 77, 79, 0.5);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.tag {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+}
+
+/* Web apps */
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.flow {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    list-style: none;
+    padding: 0;
+}
+
+.flow li {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    color: var(--muted);
+    padding: 1.25rem;
+}
+
+.flow .step {
+    display: block;
+}
+
+.compare {
+    --bs-table-bg: var(--surface);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Havoc page */
+.hero .havoc-title {
+    color: var(--accent);
+    font-size: clamp(3.5rem, 14vw, 8rem);
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 40px rgba(255, 77, 79, 0.45);
+}
+
+.facts dt {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.facts dd {
+    margin-bottom: 1rem;
+}
+
+.accordion {
+    --bs-accordion-bg: var(--surface);
+    --bs-accordion-border-color: var(--border);
+    --bs-accordion-active-bg: rgba(255, 77, 79, 0.1);
+    --bs-accordion-active-color: #fff;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(255, 77, 79, 0.3);
+}
+
+.accordion .step {
+    margin: 0 1rem 0 0;
+}
+
+.accordion-body {
+    color: var(--muted);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}

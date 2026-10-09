@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Every week of CS50x explained, with each problem set and the skills it teaches.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Curriculum | CS50x Portfolio</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            let buttons = document.querySelectorAll('.filter button');
+            let weeks = document.querySelectorAll('.week');
+            let count = document.querySelector('#count');
+
+            // Show only the weeks whose data-track contains the chosen filter
+            for (let button of buttons) {
+                button.addEventListener('click', function () {
+                    let filter = button.dataset.filter;
+                    let shown = 0;
+
+                    for (let other of buttons) {
+                        other.classList.remove('active');
+                        other.setAttribute('aria-pressed', 'false');
+                    }
+                    button.classList.add('active');
+                    button.setAttribute('aria-pressed', 'true');
+
+                    for (let week of weeks) {
+                        let tracks = week.dataset.track.split(' ');
+                        if (filter === 'all' || tracks.includes(filter)) {
+                            week.hidden = false;
+                            shown++;
+                        }
+                        else {
+                            week.hidden = true;
+                        }
+                    }
+
+                    count.innerHTML = 'Showing ' + shown + ' of ' + weeks.length + ' entries';
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span class="brand-mark">CS50x</span> Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                            href="curriculum.html">Curriculum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="webapps.html">Web Apps</a></li>
+                    <li class="nav-item"><a class="nav-link" href="havoc.html">Final Project</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <p class="eyebrow">CS50x 2026 &middot; Week 0 &ndash; 10</p>
+            <h1>Curriculum</h1>
+            <p class="lead">Every lecture of the course: the topics, each assignment in its problem set explained, and
+                the skills it builds.</p>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="filter" role="group" aria-label="Filter by topic">
+            <button class="btn btn-outline-light btn-sm active" type="button" data-filter="all"
+                aria-pressed="true">All</button>
+            <button class="btn btn-outline-light btn-sm" type="button" data-filter="c" aria-pressed="false">C</button>
+            <button class="btn btn-outline-light btn-sm" type="button" data-filter="python"
+                aria-pressed="false">Python</button>
+            <button class="btn btn-outline-light btn-sm" type="button" data-filter="sql"
+                aria-pressed="false">SQL</button>
+            <button class="btn btn-outline-light btn-sm" type="button" data-filter="web"
+                aria-pressed="false">Web</button>
+            <button class="btn btn-outline-light btn-sm" type="button" data-filter="concepts"
+                aria-pressed="false">Concepts</button>
+        </div>
+        <p id="count" aria-live="polite">Showing 13 of 13 entries</p>
+
+        <div class="timeline">
+
+            <article class="week panel" data-track="concepts">
+                <p class="week-label">Week 0</p>
+                <h2>Scratch</h2>
+                <p>Computational thinking, how computers represent information (binary, ASCII, Unicode, RGB), and the
+                    building blocks of every program: functions, conditionals, loops and variables.</p>
+                <ul>
+                    <li><strong>Scratch</strong> &ndash; an original game, story or animation built with Scratch's
+                        visual blocks.</li>
+                </ul>
+                <p class="tags"><span class="tag">Computational thinking</span><span class="tag">Abstraction</span><span
+                        class="tag">Binary</span></p>
+            </article>
+
+            <article class="week panel" data-track="c">
+                <p class="week-label">Week 1</p>
+                <h2>C</h2>
+                <p>From blocks to text: syntax, types, operators, loops, and compiling source code into machine code
+                    with <code>make</code>.</p>
+                <ul>
+                    <li><strong>Hello, It's Me</strong> &ndash; asks for the user's name and greets them.</li>
+                    <li><strong>Mario</strong> &ndash; prints a pyramid of bricks using nested loops and validated
+                        input.</li>
+                    <li><strong>Cash / Credit</strong> &ndash; computes change with the fewest coins, or validates card
+                        numbers with Luhn's algorithm.</li>
+                </ul>
+                <p class="tags"><span class="tag">C syntax</span><span class="tag">Compilation</span><span
+                        class="tag">Loops</span><span class="tag">Input validation</span></p>
+            </article>
+
+            <article class="week panel" data-track="c">
+                <p class="week-label">Week 2</p>
+                <h2>Arrays</h2>
+                <p>What happens when code is compiled, debugging, how arrays and strings are stored in memory,
+                    command-line arguments, and an introduction to cryptography.</p>
+                <ul>
+                    <li><strong>Scrabble</strong> &ndash; decides which of two players' words scores more points.</li>
+                    <li><strong>Readability</strong> &ndash; estimates the reading grade level of a text with the
+                        Coleman-Liau index.</li>
+                    <li><strong>Caesar / Substitution</strong> &ndash; encrypts text by rotating or substituting letters
+                        using a key from the command line.</li>
+                </ul>
+                <p class="tags"><span class="tag">Arrays</span><span class="tag">Strings</span><span
+                        class="tag">Debugging</span><span class="tag">Cryptography</span></p>
+            </article>
+
+            <article class="week panel" data-track="c concepts">
+                <p class="week-label">Week 3</p>
+                <h2>Algorithms</h2>
+                <p>Linear and binary search, bubble, selection and merge sort, running time in asymptotic notation (O,
+                    &Omega;, &Theta;), and recursion.</p>
+                <ul>
+                    <li><strong>Sort</strong> &ndash; works out which of three programs uses selection, bubble or merge
+                        sort by measuring their running times.</li>
+                    <li><strong>Plurality</strong> &ndash; runs a simple plurality election.</li>
+                    <li><strong>Runoff / Tideman</strong> &ndash; ranked-choice elections, decided by instant runoff or
+                        by building a graph of candidates that must avoid cycles.</li>
+                </ul>
+                <p class="tags"><span class="tag">Big O</span><span class="tag">Sorting</span><span
+                        class="tag">Recursion</span><span class="tag">Structs</span></p>
+            </article>
+
+            <article class="week panel" data-track="c">
+                <p class="week-label">Week 4</p>
+                <h2>Memory</h2>
+                <p>Pointers, segmentation faults, dynamic allocation with <code>malloc</code> and <code>free</code>, the
+                    stack and the heap, buffer overflows, and reading and writing files.</p>
+                <ul>
+                    <li><strong>Volume</strong> &ndash; scales the volume of a WAV audio file.</li>
+                    <li><strong>Filter</strong> &ndash; applies grayscale, reflection, blur and either sepia or edge
+                        detection to BMP images, pixel by pixel.</li>
+                    <li><strong>Recover</strong> &ndash; recovers deleted JPEG photos from a forensic image of a memory
+                        card.</li>
+                </ul>
+                <p class="tags"><span class="tag">Pointers</span><span class="tag">malloc / free</span><span
+                        class="tag">File I/O</span><span class="tag">Valgrind</span></p>
+            </article>
+
+            <article class="week panel" data-track="c concepts">
+                <p class="week-label">Week 5</p>
+                <h2>Data Structures</h2>
+                <p>Abstract data types: stacks and queues, linked lists, binary search trees, hash tables and tries, and
+                    the trade-offs between time and memory.</p>
+                <ul>
+                    <li><strong>Inheritance</strong> &ndash; simulates how blood types are inherited across generations.
+                    </li>
+                    <li><strong>Speller</strong> &ndash; a spell checker that loads a dictionary into a hash table,
+                        tuned for speed.</li>
+                </ul>
+                <p class="tags"><span class="tag">Linked lists</span><span class="tag">Hash tables</span><span
+                        class="tag">Tries</span><span class="tag">Optimization</span></p>
+            </article>
+
+            <article class="week panel" data-track="python">
+                <p class="week-label">Week 6</p>
+                <h2>Python</h2>
+                <p>Rewriting familiar programs in a high-level language: functions, conditionals, loops, lists,
+                    dictionaries, modules and packages.</p>
+                <ul>
+                    <li><strong>Hello, Mario, Cash / Credit, Readability</strong> &ndash; earlier C programs
+                        re-implemented in Python.</li>
+                    <li><strong>DNA</strong> &ndash; identifies a person from a DNA sequence by counting short tandem
+                        repeats.</li>
+                </ul>
+                <p class="tags"><span class="tag">Python</span><span class="tag">Dictionaries</span><span
+                        class="tag">CSV</span><span class="tag">Libraries</span></p>
+            </article>
+
+            <article class="week panel" data-track="sql">
+                <p class="week-label">Week 7</p>
+                <h2>SQL</h2>
+                <p>Relational databases: tables, types, constraints and indexes, querying with <code>SELECT</code>,
+                    <code>JOIN</code> and subqueries, plus race conditions and SQL injection attacks.
+                </p>
+                <ul>
+                    <li><strong>Songs</strong> &ndash; answers questions about the 100 most-streamed songs on Spotify in
+                        2018.</li>
+                    <li><strong>Movies</strong> &ndash; queries an IMDb database of movies, people and ratings.</li>
+                    <li><strong>Fiftyville</strong> &ndash; finds out who stole the CS50 Duck, where the thief fled and
+                        who helped, using nothing but SQL queries.</li>
+                </ul>
+                <p class="tags"><span class="tag">SQL</span><span class="tag">SQLite</span><span
+                        class="tag">JOINs</span><span class="tag">SQL injection</span></p>
+            </article>
+
+            <article class="week panel" data-track="concepts">
+                <p class="week-label">Lecture</p>
+                <h2>Artificial Intelligence</h2>
+                <p>How AI works under the hood: prompt engineering, decision trees and minimax, machine learning, neural
+                    networks, and large language models built on the transformer architecture.</p>
+                <p class="tags"><span class="tag">Machine learning</span><span class="tag">Neural networks</span><span
+                        class="tag">LLMs</span></p>
+            </article>
+
+            <article class="week panel" data-track="web">
+                <p class="week-label">Week 8</p>
+                <h2>HTML, CSS, JavaScript</h2>
+                <p>How the internet and HTTP work (TCP/IP, DNS, GET and POST), and the structure, style and behavior of
+                    web pages with HTML, CSS, JavaScript and frameworks like Bootstrap.</p>
+                <ul>
+                    <li><strong>Trivia</strong> &ndash; a quiz page that gives instant feedback through JavaScript event
+                        listeners.</li>
+                    <li><strong>Homepage</strong> &ndash; this website.</li>
+                </ul>
+                <p class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                        class="tag">JavaScript</span><span class="tag">Bootstrap</span></p>
+                <p><a href="webapps.html">See the web apps &rarr;</a></p>
+            </article>
+
+            <article class="week panel" data-track="web python sql">
+                <p class="week-label">Week 9</p>
+                <h2>Flask</h2>
+                <p>Server-side web applications in Python: routes and decorators, requests and responses, Jinja
+                    templates, sessions and cookies, with a SQL database behind it all.</p>
+                <ul>
+                    <li><strong>Birthdays</strong> &ndash; a web app that keeps track of friends' birthdays in a SQLite
+                        database.</li>
+                    <li><strong>Finance</strong> &ndash; a web app with user accounts where users check real stock
+                        prices and &ldquo;buy&rdquo; and &ldquo;sell&rdquo; shares with virtual cash.</li>
+                </ul>
+                <p class="tags"><span class="tag">Flask</span><span class="tag">Jinja</span><span
+                        class="tag">Sessions</span><span class="tag">MVC</span></p>
+                <p><a href="webapps.html">See the web apps &rarr;</a></p>
+            </article>
+
+            <article class="week panel" data-track="concepts">
+                <p class="week-label">Week 10</p>
+                <h2>Fun &amp; Games</h2>
+                <p>The closing lecture of the course, themed around fun and games, before everything comes together in
+                    the final project.</p>
+            </article>
+
+            <article class="week panel final" data-track="c python sql web concepts">
+                <p class="week-label">Final</p>
+                <h2>Final Project: Havoc</h2>
+                <p>An open, API-first platform for storing, versioning and serving structured data, built with Python,
+                    FastAPI and PostgreSQL.</p>
+                <p><a href="havoc.html">Read about Havoc &rarr;</a></p>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Built for CS50x &middot; <a href="https://cs50.harvard.edu/x/">cs50.harvard.edu/x</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

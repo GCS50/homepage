@@ -1,0 +1,32 @@
+HTML tags (10+ distinct, besides html, head, body and title):
+1. nav
+2. header
+3. main
+4. section
+5. article
+6. footer
+7. h1 / h2 / h3
+8. p
+9. a
+10. ul / ol / li
+11. table / thead / tbody / tr / th / td
+12. dl / dt / dd
+13. button
+14. span
+15. code
+
+CSS properties (5+ distinct):
+1. background-color
+2. color
+3. font-family
+4. font-size
+5. padding
+6. margin
+7. border-radius
+8. display
+9. text-align
+10. transform
+
+JavaScript: the home page animates its statistics by counting up with setInterval, and the curriculum page uses buttons with event listeners to filter the course timeline by topic (C, Python, SQL, Web, Concepts).
+
+Bootstrap: the site uses Bootstrap's responsive grid, a navbar that collapses into a menu on phones, buttons, an accordion that connects the final project to the course, badges, a responsive table, and its built-in dark color mode.
